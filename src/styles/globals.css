@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #FAFAFA;
+  --color-surface: #FFFFFF;
+  --color-primary: #111111;
+  --color-secondary: #666666;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-accent: #3B82F6;
+  --color-accent-hover: #2563EB;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+  --color-muted: #F4F4F5;
+
+  --color-dark-background: #09090B;
+  --color-dark-surface: #18181B;
+  --color-dark-primary: #FAFAFA;
+  --color-dark-secondary: #A1A1AA;
+  --color-dark-border: rgba(255, 255, 255, 0.08);
+  --color-dark-accent: #60A5FA;
+  --color-dark-accent-hover: #93BBFD;
+  --color-dark-muted: #27272A;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+}
+
+@layer base {
+  :root {
+    --bg: var(--color-background);
+    --surface: var(--color-surface);
+    --fg: var(--color-primary);
+    --fg-secondary: var(--color-secondary);
+    --border-color: var(--color-border);
+    --accent: var(--color-accent);
+    --accent-hover: var(--color-accent-hover);
+    --muted: var(--color-muted);
+  }
+
+  .dark {
+    --bg: var(--color-dark-background);
+    --surface: var(--color-dark-surface);
+    --fg: var(--color-dark-primary);
+    --fg-secondary: var(--color-dark-secondary);
+    --border-color: var(--color-dark-border);
+    --accent: var(--color-dark-accent);
+    --accent-hover: var(--color-dark-accent-hover);
+    --muted: var(--color-dark-muted);
+  }
+
+  * {
+    border-color: var(--border-color);
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--fg-secondary);
+  }
+}
